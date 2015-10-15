@@ -2,9 +2,35 @@
 
 ### Step 1
 
-Choose your font(s).
+Choose your font(s). And define their characteristics and save them as variables.
 
 I usually will decide on a heading and body font, but you may also have other fonts.
+
+```
+// Add typefaces here.
+// Add weight and style details too.
+// ! Set cap height to set to the baseline.
+$bodytype: (
+  font-family: 'Georgia, serif',
+  regular: 400,
+  bold: 700,
+  italic: italic,
+  cap-height: 0.66
+) !default;
+
+$headingtype: (
+  font-family: 'Helvetica, sans-serif',
+  regular: 400,
+  bold: 700,
+  cap-height: 0.66
+) !default;
+
+$monospacetype: (
+  font-family: 'Menlo, monospace',
+  regular: 400,
+  cap-height: 0.68
+) !default;
+```
 
 ### Step 2
 
@@ -21,7 +47,7 @@ html {
 
 ### Step 3
 
-Define your modular scale in a sass map. See http://www.modularscale.com/?16,28&px&1.25&web&table
+Define your modular scale in a sass map using the pixel values. See http://www.modularscale.com/?16,28&px&1.25&web&table
 Where H1 is alpha and the body paragrpah tag is zeta.
 - H1 = Alpha
 - H2 = Beta
@@ -65,3 +91,9 @@ body {
 
 Create base styles for each inline tag, including but not limited to: h1, h2, h3. h4, h5, h6, p, small
 Remember to keep the the modular-scale mapped names, `alpha`, `beta` etc.
+
+- - -
+
+Sources:
+- https://medium.com/written-in-code/aligning-type-to-baseline-the-right-way-using-sass-e258fce47a9b
+- https://jakegiltsoff.co.uk/posts/sassline-v2-0
