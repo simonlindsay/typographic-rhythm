@@ -32,6 +32,9 @@ $monospacetype: (
 ) !default;
 ```
 
+Cap height is defined using trial and error as it is near impossible to find cap height values for fonts.
+Cap height is a percentage value of the font size.
+
 ### Step 2
 
 Select your root size. This should be the size of your main paragraph font in pixels. Typically set at 16px.
