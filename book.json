@@ -2,7 +2,7 @@
     "plugins": [
         "edit-link",
         "base",
-        "codeblock",
+        "-codeblock",
         "es6tabs",
         "codetabs"
     ],
