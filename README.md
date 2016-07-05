@@ -103,7 +103,6 @@ Sources:
 
 
 
-```
 
 This is a code block with tabs for each languages:
 
@@ -116,5 +115,3 @@ console.log(msg);
 {%- language name="HTML", type="html" -%}
 <b>Hello World</b>
 {%- endcodetabs %}
-
-```
