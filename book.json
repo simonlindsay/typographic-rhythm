@@ -3,12 +3,13 @@
         "edit-link",
         "base",
         "codeblock",
-        "es6tabs"
+        "es6tabs",
+        "codetabs"
     ],
     "pluginsConfig": {
-      "edit-link": {
-        "base": "https://github.com/simonlindsay/typographic-rhythm/edit/master/",
-        "label": "Edit This Page"
-      }
+        "edit-link": {
+            "base": "https://github.com/simonlindsay/typographic-rhythm/edit/master/",
+            "label": "Edit This Page"
+        }
     }
 }
