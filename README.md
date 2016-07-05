@@ -1,4 +1,4 @@
-# typographic-rhythm
+# Typographic Rhythm
 
 ### Step 1
 
