@@ -100,3 +100,13 @@ Remember to keep the the modular-scale mapped names, `alpha`, `beta` etc.
 Sources:
 - https://medium.com/written-in-code/aligning-type-to-baseline-the-right-way-using-sass-e258fce47a9b
 - https://jakegiltsoff.co.uk/posts/sassline-v2-0
+
+
+
+This is some ES 6 code, you can also see the ES 5 output:
+
+{% es6 -%}
+import {test} from './test';
+
+let myVar = 'test';
+{%- endes6 %}
