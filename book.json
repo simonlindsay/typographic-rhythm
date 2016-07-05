@@ -7,7 +7,7 @@
     ],
     "pluginsConfig": {
       "edit-link": {
-        "base": "https://github.com/simonlindsay/typographic-rhythm",
+        "base": "https://github.com/simonlindsay/typographic-rhythm/blob/master/",
         "label": "Edit This Page"
       }
     }
