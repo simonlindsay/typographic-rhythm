@@ -103,13 +103,6 @@ Sources:
 
 
 
-```md
-
-This is some ES 6 code, you can also see the ES 5 output:
-
 {% es6 -%}
-import {test} from './test';
-
 let myVar = 'test';
 {%- endes6 %}
-```
