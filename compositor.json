@@ -7,31 +7,26 @@
   "title": "",
   "branch": "",
   "style": {
-    "name": "Material",
+    "name": "Williamsburg",
     "componentSet": {
-      "nav": "nav/DarkAbsoluteNav",
-      "header": "header/GradientHeader",
-      "article": "article/BasicArticle",
+      "nav": "nav/BasicNav",
+      "header": "header/LightBannerHeader",
+      "article": "article/ReaderArticle",
       "footer": "footer/BasicFooter"
     },
-    "fontFamily": "Roboto, sans-serif",
+    "fontFamily": "Montserrat, sans-serif",
     "heading": {
-      "fontWeight": 500,
-      "letterSpacing": "-0.01em"
+      "fontWeight": 600,
+      "letterSpacing": "0.1em"
     },
     "colors": {
-      "text": "#212121",
+      "text": "#346",
       "background": "#fff",
-      "primary": "#2196f3",
-      "secondary": "#1565c0",
-      "highlight": "#ff4081",
-      "border": "#e0e0e0",
-      "muted": "#f5f5f5"
-    },
-    "layout": {
-      "centered": true,
-      "bannerHeight": "80vh",
-      "maxWidth": 896
+      "primary": "#0099e0",
+      "secondary": "#ab61ff",
+      "highlight": "#f7b",
+      "muted": "#fffab3",
+      "border": "#ccd"
     }
   },
   "content": [
@@ -62,13 +57,6 @@
       ]
     },
     {
-      "component": "article",
-      "metadata": {
-        "source": "github.readme"
-      },
-      "html": "\n<h3>Step 1</h3>\n<p>Choose your font(s). And define their characteristics and save them as variables.</p>\n<p>I usually will decide on a heading and body font, but you may also have other fonts.</p>\n<pre><span class=\"hljs-comment\">// Add typefaces here.</span>\n<span class=\"hljs-comment\">// Add weight and style details too.</span>\n<span class=\"hljs-comment\">// ! Set cap height to set to the baseline.</span>\n<span class=\"hljs-string\">$bodytype:</span> (\n  font-<span class=\"hljs-string\">family:</span> <span class=\"hljs-string\">&apos;Georgia, serif&apos;</span>,\n<span class=\"hljs-symbol\">  regular:</span> <span class=\"hljs-number\">400</span>,\n<span class=\"hljs-symbol\">  bold:</span> <span class=\"hljs-number\">700</span>,\n<span class=\"hljs-symbol\">  italic:</span> italic,\n  cap-<span class=\"hljs-string\">height:</span> <span class=\"hljs-number\">0.66</span>\n) !<span class=\"hljs-keyword\">default</span>;\n<span class=\"hljs-symbol\">\n$headingtype:</span> (\n  font-<span class=\"hljs-string\">family:</span> <span class=\"hljs-string\">&apos;Helvetica, sans-serif&apos;</span>,\n<span class=\"hljs-symbol\">  regular:</span> <span class=\"hljs-number\">400</span>,\n<span class=\"hljs-symbol\">  bold:</span> <span class=\"hljs-number\">700</span>,\n  cap-<span class=\"hljs-string\">height:</span> <span class=\"hljs-number\">0.66</span>\n) !<span class=\"hljs-keyword\">default</span>;\n<span class=\"hljs-symbol\">\n$monospacetype:</span> (\n  font-<span class=\"hljs-string\">family:</span> <span class=\"hljs-string\">&apos;Menlo, monospace&apos;</span>,\n<span class=\"hljs-symbol\">  regular:</span> <span class=\"hljs-number\">400</span>,\n  cap-<span class=\"hljs-string\">height:</span> <span class=\"hljs-number\">0.68</span>\n) !<span class=\"hljs-keyword\">default</span>;</pre><p>Cap height is defined using trial and error as it is near impossible to find cap height values for fonts.\nCap height is a percentage value of the font size.</p>\n<h3>Step 2</h3>\n<p>Select your root size. This should be the size of your main paragraph font in pixels. Typically set at 16px.\nset the variable <code>$rootsize</code> to this value without any units, default is 16.</p>\n<h3>Step 4</h3>\n<p>Add the rootsize mixin to the top level html attribute</p>\n<pre>html {\n  @<span class=\"hljs-meta\"><span class=\"hljs-meta-keyword\">include</span> rootsize;</span>\n}</pre><h3>Step 3</h3>\n<p>Define your modular scale in a sass map using the pixel values. See <a href=\"http://www.modularscale.com/?16,28&amp;px&amp;1.25&amp;web&amp;table\">http://www.modularscale.com/?16,28&amp;px&amp;1.25&amp;web&amp;table</a>\nWhere H1 is alpha and the body paragrpah tag is zeta.</p>\n<ul>\n<li>H1 = Alpha</li>\n<li>H2 = Beta</li>\n<li>H3 = Gamma</li>\n<li>H4 = Delta</li>\n<li>H5 = epsilon</li>\n<li>P = zeta</li>\n<li>small = theta</li>\n<li>? = iota</li>\n</ul>\n<p>For example</p>\n<pre>$modular-scale: (\n<span class=\"hljs-symbol\">  alpha:</span>   <span class=\"hljs-number\">28.0</span>,\n<span class=\"hljs-symbol\">  beta:</span>    <span class=\"hljs-number\">25.0</span>,\n<span class=\"hljs-symbol\">  gamma:</span>   <span class=\"hljs-number\">22.4</span>,\n<span class=\"hljs-symbol\">  delta:</span>   <span class=\"hljs-number\">20.0</span>,\n<span class=\"hljs-symbol\">  epsilon:</span> <span class=\"hljs-number\">17.9</span>,\n<span class=\"hljs-symbol\">  zeta:</span>    <span class=\"hljs-number\">16.0</span>,\n<span class=\"hljs-symbol\">  eta:</span>     <span class=\"hljs-number\">14.3</span>,\n<span class=\"hljs-symbol\">  theta:</span>   <span class=\"hljs-number\">12.8</span>,\n<span class=\"hljs-symbol\">  iota:</span>    <span class=\"hljs-number\">11.5</span>\n)</pre><h3>Step 4</h3>\n<p>Set the site wide base styles on the <code>body</code> tag.</p>\n<pre><span class=\"hljs-comment\">// Site-wide base styles.</span>\n<span class=\"hljs-selector-tag\">body</span> {\n  <span class=\"hljs-attribute\">font-family</span>: unquote(map-get(<span class=\"hljs-variable\">$bodytype</span>, font-family));\n  <span class=\"hljs-attribute\">font-style</span>: normal;\n  <span class=\"hljs-attribute\">font-weight</span>: map-get(<span class=\"hljs-variable\">$bodytype</span>, regular);\n  <span class=\"hljs-attribute\">line-height</span>: <span class=\"hljs-number\">2rem</span>;\n  @<span class=\"hljs-keyword\">include</span> fontsize(zeta);\n}</pre><h3>Step 5</h3>\n<p>Create base styles for each inline tag, including but not limited to: h1, h2, h3. h4, h5, h6, p, small\nRemember to keep the the modular-scale mapped names, <code>alpha</code>, <code>beta</code> etc.</p>\n<hr>\n<p>Sources:</p>\n<ul>\n<li><a href=\"https://medium.com/written-in-code/aligning-type-to-baseline-the-right-way-using-sass-e258fce47a9b\">https://medium.com/written-in-code/aligning-type-to-baseline-the-right-way-using-sass-e258fce47a9b</a></li>\n<li><a href=\"https://jakegiltsoff.co.uk/posts/sassline-v2-0\">https://jakegiltsoff.co.uk/posts/sassline-v2-0</a></li>\n</ul>\n<p>This is a code block with tabs for each languages:</p>\n<p>{% codetabs name=&quot;Python&quot;, type=&quot;py&quot; -%}\nmsg = &quot;Hello World&quot;\nprint msg\n{%- language name=&quot;JavaScript&quot;, type=&quot;js&quot; -%}\nvar msg = &quot;Hello World&quot;;\nconsole.log(msg);\n{%- language name=&quot;HTML&quot;, type=&quot;html&quot; -%}\n<b>Hello World</b>\n{%- endcodetabs %}</p>\n"
-    },
-    {
       "component": "footer",
       "links": [
         {
@@ -80,6 +68,13 @@
           "text": "simonlindsay"
         }
       ]
+    },
+    {
+      "component": "article",
+      "metadata": {
+        "source": "github.readme"
+      },
+      "html": "\n<h3>Step 1</h3>\n<p>Choose your font(s). And define their characteristics and save them as variables.</p>\n<p>I usually will decide on a heading and body font, but you may also have other fonts.</p>\n<pre><span class=\"hljs-comment\">// Add typefaces here.</span>\n<span class=\"hljs-comment\">// Add weight and style details too.</span>\n<span class=\"hljs-comment\">// ! Set cap height to set to the baseline.</span>\n<span class=\"hljs-string\">$bodytype:</span> (\n  font-<span class=\"hljs-string\">family:</span> <span class=\"hljs-string\">&apos;Georgia, serif&apos;</span>,\n<span class=\"hljs-symbol\">  regular:</span> <span class=\"hljs-number\">400</span>,\n<span class=\"hljs-symbol\">  bold:</span> <span class=\"hljs-number\">700</span>,\n<span class=\"hljs-symbol\">  italic:</span> italic,\n  cap-<span class=\"hljs-string\">height:</span> <span class=\"hljs-number\">0.66</span>\n) !<span class=\"hljs-keyword\">default</span>;\n<span class=\"hljs-symbol\">\n$headingtype:</span> (\n  font-<span class=\"hljs-string\">family:</span> <span class=\"hljs-string\">&apos;Helvetica, sans-serif&apos;</span>,\n<span class=\"hljs-symbol\">  regular:</span> <span class=\"hljs-number\">400</span>,\n<span class=\"hljs-symbol\">  bold:</span> <span class=\"hljs-number\">700</span>,\n  cap-<span class=\"hljs-string\">height:</span> <span class=\"hljs-number\">0.66</span>\n) !<span class=\"hljs-keyword\">default</span>;\n<span class=\"hljs-symbol\">\n$monospacetype:</span> (\n  font-<span class=\"hljs-string\">family:</span> <span class=\"hljs-string\">&apos;Menlo, monospace&apos;</span>,\n<span class=\"hljs-symbol\">  regular:</span> <span class=\"hljs-number\">400</span>,\n  cap-<span class=\"hljs-string\">height:</span> <span class=\"hljs-number\">0.68</span>\n) !<span class=\"hljs-keyword\">default</span>;</pre><p>Cap height is defined using trial and error as it is near impossible to find cap height values for fonts.\nCap height is a percentage value of the font size.</p>\n<h3>Step 2</h3>\n<p>Select your root size. This should be the size of your main paragraph font in pixels. Typically set at 16px.\nset the variable <code>$rootsize</code> to this value without any units, default is 16.</p>\n<h3>Step 4</h3>\n<p>Add the rootsize mixin to the top level html attribute</p>\n<pre>html {\n  @<span class=\"hljs-meta\"><span class=\"hljs-meta-keyword\">include</span> rootsize;</span>\n}</pre><h3>Step 3</h3>\n<p>Define your modular scale in a sass map using the pixel values. See <a href=\"http://www.modularscale.com/?16,28&amp;px&amp;1.25&amp;web&amp;table\">http://www.modularscale.com/?16,28&amp;px&amp;1.25&amp;web&amp;table</a>\nWhere H1 is alpha and the body paragrpah tag is zeta.</p>\n<ul>\n<li>H1 = Alpha</li>\n<li>H2 = Beta</li>\n<li>H3 = Gamma</li>\n<li>H4 = Delta</li>\n<li>H5 = epsilon</li>\n<li>P = zeta</li>\n<li>small = theta</li>\n<li>? = iota</li>\n</ul>\n<p>For example</p>\n<pre>$modular-scale: (\n<span class=\"hljs-symbol\">  alpha:</span>   <span class=\"hljs-number\">28.0</span>,\n<span class=\"hljs-symbol\">  beta:</span>    <span class=\"hljs-number\">25.0</span>,\n<span class=\"hljs-symbol\">  gamma:</span>   <span class=\"hljs-number\">22.4</span>,\n<span class=\"hljs-symbol\">  delta:</span>   <span class=\"hljs-number\">20.0</span>,\n<span class=\"hljs-symbol\">  epsilon:</span> <span class=\"hljs-number\">17.9</span>,\n<span class=\"hljs-symbol\">  zeta:</span>    <span class=\"hljs-number\">16.0</span>,\n<span class=\"hljs-symbol\">  eta:</span>     <span class=\"hljs-number\">14.3</span>,\n<span class=\"hljs-symbol\">  theta:</span>   <span class=\"hljs-number\">12.8</span>,\n<span class=\"hljs-symbol\">  iota:</span>    <span class=\"hljs-number\">11.5</span>\n)</pre><h3>Step 4</h3>\n<p>Set the site wide base styles on the <code>body</code> tag.</p>\n<pre><span class=\"hljs-comment\">// Site-wide base styles.</span>\n<span class=\"hljs-selector-tag\">body</span> {\n  <span class=\"hljs-attribute\">font-family</span>: unquote(map-get(<span class=\"hljs-variable\">$bodytype</span>, font-family));\n  <span class=\"hljs-attribute\">font-style</span>: normal;\n  <span class=\"hljs-attribute\">font-weight</span>: map-get(<span class=\"hljs-variable\">$bodytype</span>, regular);\n  <span class=\"hljs-attribute\">line-height</span>: <span class=\"hljs-number\">2rem</span>;\n  @<span class=\"hljs-keyword\">include</span> fontsize(zeta);\n}</pre><h3>Step 5</h3>\n<p>Create base styles for each inline tag, including but not limited to: h1, h2, h3. h4, h5, h6, p, small\nRemember to keep the the modular-scale mapped names, <code>alpha</code>, <code>beta</code> etc.</p>\n<hr>\n<p>Sources:</p>\n<ul>\n<li><a href=\"https://medium.com/written-in-code/aligning-type-to-baseline-the-right-way-using-sass-e258fce47a9b\">https://medium.com/written-in-code/aligning-type-to-baseline-the-right-way-using-sass-e258fce47a9b</a></li>\n<li><a href=\"https://jakegiltsoff.co.uk/posts/sassline-v2-0\">https://jakegiltsoff.co.uk/posts/sassline-v2-0</a></li>\n</ul>\n<p>This is a code block with tabs for each languages:</p>\n<p>{% codetabs name=&quot;Python&quot;, type=&quot;py&quot; -%}\nmsg = &quot;Hello World&quot;\nprint msg\n{%- language name=&quot;JavaScript&quot;, type=&quot;js&quot; -%}\nvar msg = &quot;Hello World&quot;;\nconsole.log(msg);\n{%- language name=&quot;HTML&quot;, type=&quot;html&quot; -%}\n<b>Hello World</b>\n{%- endcodetabs %}</p>\n"
     }
   ]
 }
